@@ -27,6 +27,21 @@ Create a superuser
 poetry run python evently/manage.py createsuperuser
 ```
 
+Add some data using Python shell
+
+```
+poetry run python evently/manage.py shell
+
+>>> from django.contrib.auth.models import User
+>>> u = User.objects.first()
+>>> u.id
+1
+>>> from events.models import Event
+>>> e = Event(title="Event", description="Event desc", longitude=0.0, latitude=0.0, location="Casablanca, Morocco", owne
+r=u, start_time="2024-12-31T00:12:55.000Z")
+>>> e.save()
+```
+
 Run the backend server
 
 ```bash
@@ -63,4 +78,3 @@ pnpm dev
 The homepage will redirect you to the correct path.
 
 And you are good to go!
-
