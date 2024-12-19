@@ -105,7 +105,7 @@ export default function EventDetails({
               className="flex items-center gap-3 text-black"
             >
               <User />
-              {`${organizer.first_name} ${organizer.last_name}`}
+              {organizer.first_name ? `${organizer.first_name} ${organizer.last_name}` : organizer.username}
             </div>
           ))}
         </div>
